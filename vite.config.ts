@@ -1,4 +1,4 @@
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, URL } from "node:url";
 import { resolve, dirname } from "node:path";
 import path from "path";
 
@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(import.meta.url),
+      "@": fileURLToPath(new URL(".", import.meta.url)),
     },
   },
   build: {

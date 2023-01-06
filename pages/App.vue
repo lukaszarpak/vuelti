@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // components
-import GFooter from "../components/atoms/Footer.vue";
-import GNavbar from "../components/molecules/Navbar.vue";
+import GFooter from "@/components/atoms/Footer.vue";
+import GNavbar from "@/components/molecules/Navbar.vue";
 </script>
 
 <template>

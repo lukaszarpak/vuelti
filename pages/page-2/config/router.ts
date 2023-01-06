@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // enums
-import { PageName } from "../../../enums/PageName";
+import { PageName } from "@/enums/PageName";
 
 export const routerInstance = createRouter({
   history: createWebHistory("/pages/page-2"),
