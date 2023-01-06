@@ -1,0 +1,13 @@
+@import "floating-vue/dist/style.css";
+
+.v-popper__popper {
+  .v-popper__backdrop {
+  }
+
+  .v-popper__wrapper {
+    .v-popper__inner {
+      max-width: 24rem;
+      padding: 0.5rem;
+    }
+  }
+}

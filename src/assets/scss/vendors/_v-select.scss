@@ -1,0 +1,58 @@
+@import "vue-select/dist/vue-select.css";
+
+.v-select {
+  height: fit-content;
+  min-width: 14rem;
+
+  .vs__dropdown-toggle {
+    padding: 13.8px; // to make the select component to have exactly 58px tall
+    background-color: theme("colors.white");
+    border: 1px solid theme("colors.gray.300");
+    border-radius: 0.5rem;
+    transition: all 0.1s ease-out;
+
+    &:focus-within {
+      outline: 1px solid theme("colors.gray.800");
+      border-color: theme("colors.gray.800");
+      border-bottom-color: theme("colors.gray.500");
+    }
+
+    .vs__selected-options .vs__search::placeholder {
+      color: theme("colors.gray.500");
+    }
+  }
+
+  &.vs--open {
+    .vs__dropdown-toggle {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+  }
+
+  .vs__clear {
+    display: none;
+  }
+
+  .vs__open-indicator {
+    cursor: pointer;
+  }
+
+  &.vs--multiple {
+    .vs__deselect {
+      scale: 0.9;
+    }
+
+    .vs__selected {
+      border-radius: 5rem;
+      padding: 0.15rem 0.75rem;
+      background-color: theme("colors.gray.100");
+      border: 1px solid theme("colors.gray.300");
+    }
+  }
+
+  .vs__dropdown-menu {
+    border-radius: 0 0 0.5rem 0.5rem;
+    border: 1px solid theme("colors.gray.300");
+    border-top: none;
+    top: 100%;
+  }
+}
