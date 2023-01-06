@@ -10,7 +10,7 @@ export const routerInstance = createRouter({
     {
       name: PageName.PAGE_2,
       path: "/",
-      component: () => import("../pages/index.vue"),
+      component: () => import("../routes/index.vue"),
     },
   ],
 });

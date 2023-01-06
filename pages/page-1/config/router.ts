@@ -10,12 +10,12 @@ export const routerInstance = createRouter({
     {
       name: Page1RouteName.MAIN,
       path: "/",
-      component: () => import("../pages/index.vue"),
+      component: () => import("../routes/index.vue"),
     },
     {
       name: Page1RouteName.ABOUT,
       path: "/about",
-      component: () => import("../pages/about/index.vue"),
+      component: () => import("../routes/about/index.vue"),
     },
   ],
 });
