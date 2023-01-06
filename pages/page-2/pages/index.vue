@@ -8,7 +8,7 @@ import { Page1RouteName } from "../../../enums/RouteName";
 </script>
 
 <template>
-  <Example :title="PageName.PAGE_1" />
+  <Example :title="PageName.PAGE_2" />
   <Example :title="Page1RouteName.MAIN" />
 </template>
 
