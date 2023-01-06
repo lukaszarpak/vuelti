@@ -8,25 +8,24 @@ import vueI18n from "@intlify/vite-plugin-vue-i18n";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: path.resolve(__dirname, "src"),
+  // root: path.resolve(__dirname),
   plugins: [
     vue(),
     vueI18n({
       // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
       include: resolve(
         dirname(fileURLToPath(import.meta.url)),
-        "./src/assets/translations/messages.pl.json"
+        "./assets/translations/messages.pl.json"
       ),
     }),
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": fileURLToPath(new URL(".", import.meta.url)),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "dist"),
-    emptyOutDir: true,
+    outDir: path.resolve(__dirname, ".dist"),
     rollupOptions: {
       input: {
         homepage: resolve(__dirname, "/pages/index.html"),
