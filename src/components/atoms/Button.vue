@@ -167,8 +167,8 @@ const handleHrefClick = async (event: Event) => {
   align-items: center;
   justify-content: center;
   color: theme("colors.white");
-  background-color: theme("colors.grey.500");
-  border: 1px solid theme("colors.grey.500");
+  background-color: theme("colors.gray.500");
+  border: 1px solid theme("colors.gray.500");
   border-radius: 0.5rem;
   transition: 0.2s ease-out;
   cursor: pointer;
@@ -282,7 +282,7 @@ const handleHrefClick = async (event: Event) => {
     position: relative;
 
     :deep(.g-loader.absolute-position) {
-      background-color: theme("colors.grey.300");
+      background-color: theme("colors.gray.300");
     }
   }
 }

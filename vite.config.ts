@@ -8,6 +8,7 @@ import vueI18n from "@intlify/vite-plugin-vue-i18n";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: path.resolve(__dirname, "src"),
   plugins: [
     vue(),
     vueI18n({
@@ -26,6 +27,12 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        page1: resolve(__dirname, "/page-1/index.html"),
+        page2: resolve(__dirname, "/page-2/index.html"),
+      },
+    },
   },
   server: {
     host: "0.0.0.0",

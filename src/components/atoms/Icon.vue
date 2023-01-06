@@ -23,10 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
   color: IconColor.DARK_GRAY,
 });
 
-const iconSrc = computed(
-  () =>
-    `/${import.meta.env.VITE_APP_BASE_URL}/images/svg/icons/${props.icon}.svg`
-);
+const iconSrc = computed(() => `/images/svg/icons/${props.icon}.svg`);
 </script>
 
 <template>

@@ -2,6 +2,13 @@
 // composables
 import { useI18n } from "vue-i18n";
 
+// components
+import GButton from "@/components/atoms/Button.vue";
+
+// enums
+import { ButtonVariant } from "@/enums/Button";
+import { Route } from "@/enums/Route";
+
 const { t } = useI18n();
 
 const logoSrc = `/images/svg/logo.svg`;
@@ -13,6 +20,14 @@ const logoSrc = `/images/svg/logo.svg`;
       <a class="g-navbar__logo" href="/">
         <img class="g-navbar__logo--img" :alt="t('example')" :src="logoSrc" />
       </a>
+      <div class="flex gap-2">
+        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-1/">
+          {{ t("page-1") }}
+        </GButton>
+        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-2/">
+          {{ t("page-2") }}
+        </GButton>
+      </div>
     </div>
   </nav>
 </template>

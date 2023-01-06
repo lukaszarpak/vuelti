@@ -1,4 +1,6 @@
 {
   "example": "example",
+  "page-1": "page 1",
+  "page-2": "page 2",
   "footer.copyright": "Vue3 MPA Test App ({ date })"
 }

@@ -33,7 +33,6 @@ const vueToastificationPluginOptions: VueToastificationPluginOptions = {
 };
 
 const app = createApp(App);
-
 app
   .use(routerInstance)
   .use(i18n)
