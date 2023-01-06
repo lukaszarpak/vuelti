@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // enums
-import { Route } from "@/enums/Route";
+import { PageName } from "@/enums/PageName";
 
 export const routerInstance = createRouter({
-  history: createWebHistory("/"),
+  history: createWebHistory("/pages/page-2"),
   scrollBehavior: () => ({ top: 0, behavior: "smooth" }),
   routes: [
     {
-      name: Route.PAGE_2,
+      name: PageName.PAGE_2,
       path: "/",
-      component: () => import("../pages/Example.vue"),
+      component: () => import("../pages/index.vue"),
     },
   ],
 });

@@ -7,7 +7,6 @@ import GButton from "@/components/atoms/Button.vue";
 
 // enums
 import { ButtonVariant } from "@/enums/Button";
-import { Route } from "@/enums/Route";
 
 const { t } = useI18n();
 

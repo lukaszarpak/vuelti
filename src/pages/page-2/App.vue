@@ -9,8 +9,6 @@ import GNavbar from "@/components/molecules/Navbar.vue";
 <template>
   <GNavbar />
 
-  App2
-
   <main class="min-h-screen">
     <RouterView />
   </main>
