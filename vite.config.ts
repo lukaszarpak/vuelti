@@ -6,6 +6,28 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueI18n from "@intlify/vite-plugin-vue-i18n";
 
+import { readdirSync } from "fs";
+
+const getDirectories = (source: string) =>
+  readdirSync(source, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
+const pageNames = getDirectories(path.resolve(__dirname, "./pages"));
+
+const getInputFiles = (pageNames: string[]) => {
+  const inputFiles: Record<string, string> = {};
+
+  pageNames.forEach((pageName) => {
+    inputFiles[pageName] = path.resolve(
+      __dirname,
+      `./pages/${pageName}/index.html`
+    );
+  });
+
+  return inputFiles;
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -28,8 +50,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         homepage: resolve(__dirname, "/pages/index.html"),
-        page1: resolve(__dirname, "/pages/page-1/index.html"),
-        page2: resolve(__dirname, "/pages/page-2/index.html"),
+        ...getInputFiles(pageNames),
       },
     },
   },
