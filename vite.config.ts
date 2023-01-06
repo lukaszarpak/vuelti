@@ -29,8 +29,9 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        page1: resolve(__dirname, "/page-1/index.html"),
-        page2: resolve(__dirname, "/page-2/index.html"),
+        homepage: resolve(__dirname, "/pages/index.html"),
+        page1: resolve(__dirname, "/pages/page-1/index.html"),
+        page2: resolve(__dirname, "/pages/page-2/index.html"),
       },
     },
   },
