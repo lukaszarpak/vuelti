@@ -6,7 +6,7 @@
     "ci": "yarn install --frozen-lockfile && yarn dev",
     "dev": "vite --port 3000",
     "build": "run-p type-check gen-pages build-only",
-    "gen-pages": "node .vuelti/generate-available-pages.js",
+    "gen-pages": "ts-node .vuelti/generate-available-pages.mts",
     "preview": "vite preview --port 4173",
     "build-watch": "vite build --watch",
     "build-only": "vite build && bash .vuelti/move-built-pages.sh",
