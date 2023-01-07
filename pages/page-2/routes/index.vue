@@ -3,13 +3,13 @@
 import Example from "../../../components/templates/Example.vue";
 
 // enums
-import { PageName } from "../../../enums/PageName";
-import { Page1RouteName } from "../../../enums/RouteName";
+import { PageName } from "../../../.vuelti/PageName";
+import { Route } from "@/pages/page-2/enums/Route";
 </script>
 
 <template>
   <Example :title="PageName.PAGE_2" />
-  <Example :title="Page1RouteName.MAIN" />
+  <Example :title="Route.MAIN" />
 </template>
 
 <style lang="scss" scoped></style>

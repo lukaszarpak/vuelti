@@ -7,6 +7,7 @@ import GButton from "../atoms/Button.vue";
 
 // enums
 import { ButtonVariant } from "../../enums/Button";
+import { PageName } from "../../.vuelti/PageName";
 
 const { t } = useI18n();
 
@@ -20,11 +21,17 @@ const logoSrc = `/images/svg/logo.svg`;
         <img class="g-navbar__logo--img" :alt="t('example')" :src="logoSrc" />
       </a>
       <div class="flex gap-2">
-        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-1/">
-          {{ t("page-1") }}
+        <GButton
+          :button-variant="ButtonVariant.TRANSPARENT"
+          :href="`/${PageName.PAGE_1}`"
+        >
+          {{ PageName.PAGE_1 }}
         </GButton>
-        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-2/">
-          {{ t("page-2") }}
+        <GButton
+          :button-variant="ButtonVariant.TRANSPARENT"
+          :href="`/${PageName.PAGE_2}`"
+        >
+          {{ PageName.PAGE_2 }}
         </GButton>
       </div>
     </div>
