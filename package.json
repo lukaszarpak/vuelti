@@ -8,7 +8,7 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-watch": "vite build --watch",
-    "build-only": "vite build",
+    "build-only": "vite build && bash move-built-pages.sh",
     "serve": "vite preview",
     "start": "ts-node server.mts",
     "type-check": "vue-tsc --noEmit",

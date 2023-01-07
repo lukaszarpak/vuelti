@@ -16,20 +16,14 @@ const logoSrc = `/images/svg/logo.svg`;
 <template>
   <nav class="g-navbar py-4 bg-white shadow-md">
     <div class="container">
-      <a class="g-navbar__logo" href="/pages/">
+      <a class="g-navbar__logo" href="/">
         <img class="g-navbar__logo--img" :alt="t('example')" :src="logoSrc" />
       </a>
       <div class="flex gap-2">
-        <GButton
-          :button-variant="ButtonVariant.TRANSPARENT"
-          href="/pages/page-1/"
-        >
+        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-1/">
           {{ t("page-1") }}
         </GButton>
-        <GButton
-          :button-variant="ButtonVariant.TRANSPARENT"
-          href="/pages/page-2/"
-        >
+        <GButton :button-variant="ButtonVariant.TRANSPARENT" href="/page-2/">
           {{ t("page-2") }}
         </GButton>
       </div>

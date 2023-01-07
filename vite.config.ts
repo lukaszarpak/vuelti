@@ -8,12 +8,12 @@ import vueI18n from "@intlify/vite-plugin-vue-i18n";
 
 import { readdirSync } from "fs";
 
-const getDirectories = (source: string) =>
+const getDirectoryNames = (source: string) =>
   readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
 
-const pageNames = getDirectories(path.resolve(__dirname, "./pages"));
+const pageNames = getDirectoryNames(path.resolve(__dirname, "./pages"));
 
 const getInputFiles = (pageNames: string[]) => {
   const inputFiles: Record<string, string> = {};
