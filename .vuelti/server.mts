@@ -8,17 +8,18 @@ import path from "path";
 dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const __root = path.resolve(__dirname, "..");
 const port = process.env.PORT || 4000;
 
 const app = express();
 
 app
-  .use("/assets", express.static(path.resolve(__dirname, ".dist/assets")))
-  .use("/images", express.static(path.resolve(__dirname, ".dist/images")))
+  .use("/assets", express.static(path.resolve(__root, ".dist/assets")))
+  .use("/images", express.static(path.resolve(__root, ".dist/images")))
   .get("/*", (req, res) => {
       const page = req.path.split("/")[1];
 
-      res.sendFile(page ? `${__dirname}/.dist/${page}/index.html` : `${__dirname}/.dist/index.html`)
+      res.sendFile(page ? `${__root}/.dist/${page}/index.html` : `${__root}/.dist/index.html`)
 
   })
   .listen(port, () => {

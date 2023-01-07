@@ -1,7 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
-    "env.d.ts", "index.d.ts", "./**/*", "./**/*.vue"],
+    "env.d.ts", "index.d.ts", "./**/*", "./**/*.vue", "./.vuelti/**/*"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
