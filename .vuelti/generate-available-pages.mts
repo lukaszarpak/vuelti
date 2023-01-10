@@ -1,15 +1,13 @@
 import { fileURLToPath } from "url";
-import { readdirSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { dirname, resolve } from "node:path";
+
+// tools
+import { getDirectoryNames } from "@/tools/getDirectoryNames";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const __root = resolve(__dirname, "..");
-
-const getDirectoryNames = (source: string) =>
-    readdirSync(source, { withFileTypes: true })
-        .filter((dirent) => dirent.isDirectory())
-        .map((dirent) => dirent.name);
 
 const pageNames = getDirectoryNames(resolve(__root, "./pages"));
 

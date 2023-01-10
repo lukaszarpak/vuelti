@@ -9,7 +9,7 @@
     "gen-pages": "ts-node .vuelti/generate-available-pages.mts",
     "preview": "vite preview --port 4173",
     "build-watch": "vite build --watch",
-    "build-only": "vite build && bash .vuelti/move-built-pages.sh",
+    "build-only": "vite build && ts-node .vuelti/move-built-pages.mts",
     "serve": "vite preview",
     "start": "ts-node .vuelti/server.mts",
     "type-check": "vue-tsc --noEmit",

@@ -9,7 +9,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const __root = resolve(__dirname, "..");
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 const app = express();
 
@@ -20,7 +20,6 @@ app
       const page = req.path.split("/")[1];
 
       res.sendFile(page ? `${__root}/.dist/${page}/index.html` : `${__root}/.dist/index.html`)
-
   })
   .listen(port, () => {
     console.log(`client-panel node app listing on: http://localhost:${port}/`);
