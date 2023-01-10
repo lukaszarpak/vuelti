@@ -1,9 +1,12 @@
+import { readdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { writeFileSync } from "fs";
 import { dirname, resolve } from "node:path";
 
-// tools
-import { getDirectoryNames } from "@/tools/getDirectoryNames";
+const getDirectoryNames = (source: string) =>
+    readdirSync(source, { withFileTypes: true })
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => dirent.name);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

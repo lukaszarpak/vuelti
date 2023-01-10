@@ -1,10 +1,11 @@
-import { rename, rmSync } from 'fs';
+import {readdirSync, renameSync, rmSync, existsSync, mkdirSync} from 'fs';
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "node:path";
 
-
-// tools
-import { getDirectoryNames } from "@/tools/getDirectoryNames";
+const getDirectoryNames = (source: string) =>
+    readdirSync(source, { withFileTypes: true })
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => dirent.name);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,15 +17,21 @@ const distDir = resolve(__root, ".dist");
 const distPagesDir = resolve(distDir, "pages");
 
 try {
+    // moves homepage
+    renameSync(resolve(distPagesDir, 'index.html'), resolve(distDir, 'index.html'));
+
+    // moves other pages
     pageNames.forEach((pageName) => {
-        rename(resolve(__root, `${distPagesDir}/${pageName}/index.html`), resolve(__root, `${distDir}/${pageName}/index.vue`), (err) => {
-            if (err) throw err;
-        });
+        if(!existsSync(resolve(distDir, pageName))) {
+            mkdirSync(resolve(distDir, pageName))
+        }
+
+        renameSync(resolve(distPagesDir, `${pageName}/index.html`), resolve(distDir, `${pageName}/index.html`));
     });
 
     rmSync(distPagesDir, { recursive: true, force: true });
 
     console.log('Built pages moved successfully');
 } catch (error) {
-    console.error(error);
+    console.error('move error:', error);
 }

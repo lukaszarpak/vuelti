@@ -1,7 +1,10 @@
 import { resolve } from "node:path";
+import { readdirSync } from "fs";
 
-// tools
-import { getDirectoryNames } from "@/tools/getDirectoryNames";
+const getDirectoryNames = (source: string) =>
+    readdirSync(source, { withFileTypes: true })
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => dirent.name);
 
 const __root = resolve(__dirname, "..");
 
